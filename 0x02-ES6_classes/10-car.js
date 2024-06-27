@@ -1,4 +1,6 @@
-export default class Car {
+const CarSymbol = Symbol('Car');
+
+class Car {
   constructor(brand, motor, color) {
     this._brand = brand;
     this._motor = motor;
@@ -6,6 +8,11 @@ export default class Car {
   }
 
   cloneCar() {
-    return new Car(this._brand, this._motor, this._color);
+    const NewCarClass = this.constructor[CarSymbol];
+    return new NewCarClass();
   }
 }
+
+Car[CarSymbol] = Car;
+
+export default Car;
