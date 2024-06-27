@@ -1,4 +1,4 @@
-const cloneSymbol = Symbol('clone');
+const CarSymbol = Symbol();
 
 export default class Car {
   constructor(brand, motor, color) {
@@ -7,11 +7,11 @@ export default class Car {
     this._color = color;
   }
 
-  [cloneSymbol]() {
-    return new Car(this._brand, this._motor, this._color);
+  cloneCar() {
+    return new this.constructor[CarSymbol]();
   }
 
-  cloneCar() {
-    return this[cloneSymbol]();
+  static [CarSymbol]() {
+    return new this();
   }
 }
