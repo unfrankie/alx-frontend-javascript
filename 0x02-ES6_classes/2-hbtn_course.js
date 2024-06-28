@@ -9,11 +9,11 @@ class HolbertonCourse {
     return this._name;
   }
 
-  set name(newName) {
-    if (typeof newName !== 'string') {
+  set name(value) {
+    if (typeof value !== 'string') {
       throw new TypeError('Name must be a string');
     }
-    this._name = newName;
+    this._name = value;
   }
 
   get length() {
