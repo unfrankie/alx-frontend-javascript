@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Currency from './3-currency';
 
 export default class Pricing {
@@ -30,3 +31,4 @@ export default class Pricing {
     return amount * conversionRate;
   }
 }
+/* eslint-disable no-unused-vars */
